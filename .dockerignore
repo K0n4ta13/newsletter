@@ -1,0 +1,9 @@
+.idea
+tests
+http
+target
+.git
+.gitignore
+.dockerignore
+docker-compose.yml
+Dockerfile

@@ -1,0 +1,33 @@
+[package]
+name = "zero2prod"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.8.1"
+dotenvy = "0.15.7"
+serde = { version = "1.0.217", features = ["derive"] }
+time = { version = "0.3.37", features = ["serde-human-readable"] }
+tokio = { version = "1.43.0", features = ["full"] }
+tower-http = { version = "0.6.2", features = ["trace"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+anyhow = "1.0.95"
+uuid = { version = "1.12.0", features = ["serde"] }
+
+[dependencies.sqlx]
+version = "0.8.3"
+default-features = false
+features = [
+    "runtime-tokio",
+    "tls-rustls",
+    "macros",
+    "postgres",
+    "uuid",
+    "time"
+]
+
+[dev-dependencies]
+mime = "0.3.17"
+tower = "0.5.2"
+

@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: zero2prod
+    ports:
+      - "8080:8080"
+
+  database:
+    image: postgres:latest
+    restart: unless-stopped
+    container_name: zero2prod_database
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: zero2prod
+    ports:
+      - "5432:5432"
