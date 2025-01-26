@@ -21,8 +21,6 @@ pub(super) async fn subscription(
     state: State<AppState>,
     Form(form): Form<FormData>
 ) -> Result<Json<Subscriber>, String> {
-    tracing::info_span!()
-
     Ok(Json(sqlx::query_as!(
         Subscriber,
         // language=PostgreSQL
